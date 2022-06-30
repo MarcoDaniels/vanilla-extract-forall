@@ -1,0 +1,18 @@
+{
+  "name": "vanilla",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "dist/index.css.js",
+  "types": "dist/index.css.d.ts",
+  "scripts": {
+    "build": "rm -rf dist/ && tsc"
+  },
+  "dependencies": {
+    "@vanilla-extract/css": "1.7.2",
+    "@vanilla-extract/recipes": "0.2.5",
+    "@vanilla-extract/sprinkles": "1.4.1"
+  },
+  "devDependencies": {
+    "typescript": "4.7.4"
+  }
+}
