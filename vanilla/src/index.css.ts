@@ -1,5 +1,6 @@
 import {createSprinkles, defineProperties} from "@vanilla-extract/sprinkles"
 import {createTheme} from "@vanilla-extract/css"
+import {recipe, RecipeVariants} from "@vanilla-extract/recipes"
 
 export const [themeClass, themeVars] = createTheme({
     color: {
@@ -29,6 +30,15 @@ export const styles = createSprinkles(defineProperties({
         color: themeVars.color,
         backgroundColor: themeVars.color,
         // -
+        border: {
+            'none': 'none',
+            'some': '2px solid #000'
+        },
+        borderRadius: {
+            'none': '0',
+            'some': '15px'
+        },
+        // -
         paddingTop: themeVars.space,
         paddingBottom: themeVars.space,
         paddingLeft: themeVars.space,
@@ -40,9 +50,29 @@ export const styles = createSprinkles(defineProperties({
         marginRight: themeVars.gap,
     },
     shorthands: {
-        padding: ['paddingTop', 'paddingBottom', 'paddingLeft', 'marginRight']
+        padding: ['paddingTop', 'paddingBottom', 'paddingLeft', 'paddingRight']
     }
 }))
 
 
 export type Styles = Parameters<typeof styles>[0]
+
+export const button = recipe({
+    base: styles({border: 'none'}),
+    variants: {
+        type: {
+            danger: styles({backgroundColor: 'danger', color: 'text'}),
+            okay: styles({backgroundColor: 'okay', color: 'textInverse'}),
+        },
+        size: {
+            small: styles({padding: 'small'}),
+            large: styles({padding: 'large'})
+        },
+        border: {
+            some: styles({border: 'some', borderRadius: 'some'}),
+            none: styles({border: 'none'})
+        }
+    }
+})
+
+export type ButtonVariants = RecipeVariants<typeof button>
