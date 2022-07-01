@@ -14,8 +14,12 @@ let
 in pkgs.mkShell {
   buildInputs = [
     pkgs.nixfmt
+
     pkgs.nodejs-16_x
     pkgs.yarn
+
+    pkgs.elmPackages.elm
+    pkgs.elmPackages.elm-format
 
     build
     start
