@@ -1,14 +1,6 @@
-import {button, ButtonVariants, themeClass} from "vanilla"
-import {FC, useState} from "react"
-
-type ButtonComponentProps = {
-    handler: () => void
-    text: string
-    variant: ButtonVariants
-}
-
-const ButtonComponent: FC<ButtonComponentProps> = ({text, handler, variant}) =>
-    <button className={button(variant)} onClick={handler}>{text}</button>
+import {themeClass} from "vanilla"
+import {useState} from "react"
+import {ButtonComponent} from "./Button"
 
 const App = () => {
     const [danger, setDanger] = useState(true)
