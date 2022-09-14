@@ -1,6 +1,6 @@
 import {button, themeClass} from "vanilla"
 
-const app = document.querySelector<HTMLDivElement>('#app')!
+const app = document.querySelector<HTMLDivElement>('#html')!
 
 app.innerHTML = `<button id="status"></button>`
 

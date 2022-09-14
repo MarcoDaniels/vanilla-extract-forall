@@ -1,0 +1,16 @@
+{
+  "name": "vanilla-extract-forall",
+  "version": "1.0.0",
+  "repository": "https://github.com:MarcoDaniels/vanilla-extract-forall",
+  "author": "Marco Martins <marcodanielmartins@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vanilla-extract/vite-plugin": "3.5.0",
+    "typescript": "4.8.3",
+    "vite": "3.1.0"
+  }
+}
