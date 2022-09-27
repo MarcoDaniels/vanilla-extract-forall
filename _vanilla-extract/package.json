@@ -1,0 +1,6 @@
+{
+  "name": "vanilla",
+  "version": "1.0.0",
+  "main": "index.css.ts",
+  "types": "index.css.ts"
+}
