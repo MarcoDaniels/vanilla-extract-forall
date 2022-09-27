@@ -1,5 +1,6 @@
-import {button, ButtonVariants} from "vanilla"
-import {FC} from "react"
+import {button} from "vanilla"
+import type {ButtonVariants} from "vanilla"
+import type {FC} from "react"
 
 export type ButtonComponentProps = {
     handler: () => void
