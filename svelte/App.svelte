@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {themeClass} from 'vanilla'
+    import {box} from 'vanilla'
     import Button from './Button.svelte'
 
     let danger = true
@@ -9,7 +9,7 @@
     }
 </script>
 
-<main class={themeClass}>
+<main class={box({type: 'center', border: 'some'})}>
     <Button handler={setDanger}
             variant={{type: danger ? 'danger' : 'okay', border: 'some', size: 'small'}}
             text={danger ? "I'm in danger" : "I'm okay!"}

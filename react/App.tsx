@@ -1,4 +1,4 @@
-import {themeClass} from "vanilla"
+import {box} from "vanilla"
 import {useState} from "react"
 import {ButtonComponent} from "./Button"
 
@@ -6,7 +6,7 @@ const App = () => {
     const [danger, setDanger] = useState(true)
 
     return (
-        <div className={themeClass}>
+        <div className={box({type: 'center', border: 'some'})}>
             <ButtonComponent
                 handler={() => setDanger(!danger)}
                 text={danger ? "I'm in danger" : "I'm okay!"}

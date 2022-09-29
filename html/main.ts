@@ -1,14 +1,20 @@
-import {button, themeClass} from "vanilla"
+import {box, button, themeClass} from "vanilla"
 
 const app = document.querySelector<HTMLDivElement>('#html')!
 
-app.innerHTML = `<button id="status"></button>`
+const element = document.createElement('button')
 
-app.className = themeClass
+const wrapper = document.createElement('div')
+
+wrapper.className = box({type: 'center', border: 'some'})
+
+wrapper.appendChild(element)
+
+app.className = themeClass + ' ' + box({type: 'grid'})
+
+app.appendChild(wrapper)
 
 const buttonHandler = () => {
-    const element = document.querySelector<HTMLButtonElement>('#status')!
-
     let danger = false
     const setDanger = () => {
         danger = !danger

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {themeClass} from "vanilla"
+import {box} from "vanilla"
 import ButtonComponent from "./ButtonComponent.vue"
 import {ref} from "vue"
 
@@ -11,7 +11,7 @@ const setDanger = () => {
 </script>
 
 <template>
-  <div :class="themeClass">
+  <div :class="box({type: 'center', border: 'some'})">
     <ButtonComponent
         :handler="setDanger"
         :variant="{type:  danger ? 'danger' : 'okay', border: 'some', size: 'small'}"

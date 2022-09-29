@@ -11,7 +11,7 @@ type alias Model =
 
 
 type alias ClassNames =
-    { theme : String
+    { wrapper : String
     , danger : String
     , okay : String
     }
@@ -27,7 +27,7 @@ main =
         { init = \initClassNames -> ( { danger = True, classNames = initClassNames }, Cmd.none )
         , view =
             \model ->
-                Html.div [ Html.class model.classNames.theme ]
+                Html.div [ Html.class model.classNames.wrapper ]
                     [ Html.button
                         [ Html.classList
                             [ ( model.classNames.danger, model.danger )
