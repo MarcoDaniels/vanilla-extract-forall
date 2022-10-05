@@ -1,16 +1,18 @@
-import {box} from "vanilla"
+import {box, themeReact, text} from "vanilla"
 import {useState} from "react"
 import {ButtonComponent} from "./Button"
 
 const App = () => {
-    const [danger, setDanger] = useState(true)
+    const [withTheme, setWithTheme] = useState(true)
 
     return (
-        <div className={box({type: 'center', border: 'some'})}>
+        <div className={`${withTheme ? themeReact : ''} ${box({type: 'center', border: 'some'})}`}>
+            <h2 className={text({type: 'brand'})}>React.js</h2>
+
             <ButtonComponent
-                handler={() => setDanger(!danger)}
-                text={danger ? "I'm in danger" : "I'm okay!"}
-                variant={{type: danger ? 'danger' : 'okay', border: 'some', size: 'small'}}
+                handler={() => setWithTheme(!withTheme)}
+                text={withTheme ? "with theme" : "without theme"}
+                variant={{ border: 'some', size: 'small'}}
             />
         </div>
     )

@@ -28,7 +28,8 @@ main =
         , view =
             \model ->
                 Html.div [ Html.class model.classNames.wrapper ]
-                    [ Html.button
+                    [ Html.h2 [] [ Html.text "elm" ]
+                    , Html.button
                         [ Html.classList
                             [ ( model.classNames.danger, model.danger )
                             , ( model.classNames.okay, not model.danger )

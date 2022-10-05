@@ -1,4 +1,4 @@
-import {box, button, themeClass} from "vanilla"
+import {box, button, baseTheme} from "vanilla"
 
 const app = document.querySelector<HTMLDivElement>('#html')!
 
@@ -8,9 +8,15 @@ const wrapper = document.createElement('div')
 
 wrapper.className = box({type: 'center', border: 'some'})
 
+const title = document.createElement('h2')
+
+title.innerText = 'HTML'
+
+wrapper.appendChild(title)
+
 wrapper.appendChild(element)
 
-app.className = themeClass + ' ' + box({type: 'grid'})
+app.className = baseTheme + ' ' + box({type: 'grid'})
 
 app.appendChild(wrapper)
 

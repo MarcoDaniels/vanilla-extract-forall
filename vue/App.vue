@@ -12,6 +12,7 @@ const setDanger = () => {
 
 <template>
   <div :class="box({type: 'center', border: 'some'})">
+    <h2>Vue.js</h2>
     <ButtonComponent
         :handler="setDanger"
         :variant="{type:  danger ? 'danger' : 'okay', border: 'some', size: 'small'}"

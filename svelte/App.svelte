@@ -10,6 +10,7 @@
 </script>
 
 <main class={box({type: 'center', border: 'some'})}>
+    <h2>Svelte</h2>
     <Button handler={setDanger}
             variant={{type: danger ? 'danger' : 'okay', border: 'some', size: 'small'}}
             text={danger ? "I'm in danger" : "I'm okay!"}

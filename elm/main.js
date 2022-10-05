@@ -1,5 +1,5 @@
 import { Elm } from './Main.elm'
-import {box, button, themeClass} from 'vanilla'
+import {box, button} from 'vanilla'
 
 Elm.Main.init({
     node: document.getElementById('elm'),
