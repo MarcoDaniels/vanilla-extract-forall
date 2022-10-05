@@ -1,11 +1,12 @@
 import { Elm } from './Main.elm'
-import {box, button} from 'vanilla'
+import {box, button, themeElm, text} from 'vanilla'
 
 Elm.Main.init({
     node: document.getElementById('elm'),
     flags: {
+        themeElm: themeElm,
         wrapper: box({type: 'center', border: 'some'}),
-        danger: button({type: 'danger', border: 'some', size: 'small'}),
-        okay: button({type: 'okay', border: 'some', size: 'small'})
+        brand: text({type: 'brand'}),
+        button: button({border: 'some', size: 'small'}),
     }
 })

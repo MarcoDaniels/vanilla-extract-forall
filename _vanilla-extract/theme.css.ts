@@ -34,3 +34,17 @@ export const themeReact = createTheme(themeVars, {
     },
     space
 })
+
+export const themeElm = createTheme(themeVars, {
+    color: {
+        brand: '#0c91d8',
+        primary: '#0c91d8'
+    },
+    background: {
+        primary: '#FFF',
+    },
+    font: {
+        brand: '"IBM Plex Sans", sans-serif',
+    },
+    space
+})

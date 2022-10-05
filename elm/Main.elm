@@ -7,48 +7,53 @@ import Html.Events as Html
 
 
 type alias Model =
-    { danger : Bool, classNames : ClassNames }
+    { withTheme : Bool
+    , classNames : ClassNames
+    }
 
 
 type alias ClassNames =
-    { wrapper : String
-    , danger : String
-    , okay : String
+    { themeElm : String
+    , wrapper : String
+    , brand : String
+    , button : String
     }
 
 
 type Msg
-    = SetDanger Bool
+    = SetTheme Bool
 
 
 main : Program ClassNames Model Msg
 main =
     Browser.element
-        { init = \initClassNames -> ( { danger = True, classNames = initClassNames }, Cmd.none )
+        { init = \initClassNames -> ( { withTheme = True, classNames = initClassNames }, Cmd.none )
         , view =
             \model ->
-                Html.div [ Html.class model.classNames.wrapper ]
-                    [ Html.h2 [] [ Html.text "elm" ]
+                Html.div
+                    [ Html.classList
+                        [ ( model.classNames.themeElm, model.withTheme )
+                        , ( model.classNames.wrapper, True )
+                        ]
+                    ]
+                    [ Html.h2 [ Html.class model.classNames.brand ] [ Html.text "elm" ]
                     , Html.button
-                        [ Html.classList
-                            [ ( model.classNames.danger, model.danger )
-                            , ( model.classNames.okay, not model.danger )
-                            ]
-                        , Html.onClick (SetDanger (not model.danger))
+                        [ Html.class model.classNames.button
+                        , Html.onClick (SetTheme (not model.withTheme))
                         ]
                         [ Html.text
-                            (if model.danger then
-                                "I'm in danger"
+                            (if model.withTheme then
+                                "with theme"
 
                              else
-                                "I'm okay"
+                                "without theme"
                             )
                         ]
                     ]
         , update =
             \msg model ->
                 case msg of
-                    SetDanger danger ->
-                        ( { model | danger = danger }, Cmd.none )
+                    SetTheme theme ->
+                        ( { model | withTheme = theme }, Cmd.none )
         , subscriptions = \_ -> Sub.none
         }
