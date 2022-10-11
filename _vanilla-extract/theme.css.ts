@@ -48,3 +48,17 @@ export const themeElm = createTheme(themeVars, {
     },
     space
 })
+
+export const themeSvelte = createTheme(themeVars, {
+    color: {
+        brand: '#ff3e00',
+        primary: '#ff3e00'
+    },
+    background: {
+        primary: '#f6fafd',
+    },
+    font: {
+        brand: '"Helvetica Neue", sans-serif',
+    },
+    space
+})
