@@ -27,7 +27,7 @@ export const themeReact = createTheme(themeVars, {
         primary: '#FFF'
     },
     background: {
-        primary: '#000',
+        primary: '#20232a',
     },
     font: {
         brand: 'Roboto,sans-serif',
@@ -59,6 +59,20 @@ export const themeSvelte = createTheme(themeVars, {
     },
     font: {
         brand: '"Helvetica Neue", sans-serif',
+    },
+    space
+})
+
+export const themeVue = createTheme(themeVars, {
+    color: {
+        brand: '#42b883',
+        primary: '#42b883'
+    },
+    background: {
+        primary: '#FFF',
+    },
+    font: {
+        brand: 'Inter, sans-serif',
     },
     space
 })
