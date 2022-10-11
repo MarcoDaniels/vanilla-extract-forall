@@ -1,35 +1,34 @@
-import {box, button, baseTheme} from "vanilla"
+import {box, button, baseTheme, text} from "vanilla"
 
-const app = document.querySelector<HTMLDivElement>('#html')!
+const body = document.querySelector<HTMLDivElement>('body')!
 
-const element = document.createElement('button')
+const buttonEl = document.createElement('button')
 
-const wrapper = document.createElement('div')
-
-wrapper.className = box({type: 'center', border: 'some'})
+const app = document.createElement('div')
 
 const title = document.createElement('h2')
-
 title.innerText = 'HTML'
+title.className = text({type: 'brand'})
 
-wrapper.appendChild(title)
+app.className = box({type: 'center', border: 'some'})
+app.appendChild(title)
+app.appendChild(buttonEl)
 
-wrapper.appendChild(element)
-
-app.className = baseTheme + ' ' + box({type: 'grid'})
-
-app.appendChild(wrapper)
+body.appendChild(app)
 
 const buttonHandler = () => {
-    let danger = false
-    const setDanger = () => {
-        danger = !danger
-        element.innerHTML = danger ? "I'm in danger" : "I'm okay"
-        element.className = button({type: danger ? 'danger' : 'okay', border: 'some', size: 'small'})
+    let theme = false
+
+    const setTheme = () => {
+        theme = !theme
+        buttonEl.innerHTML = theme ? "with theme" : "without theme"
+        buttonEl.className = button({border: 'some', size: 'small'})
+
+        body.className = (theme ? baseTheme : '') + ' ' + box({type: 'grid'})
     }
 
-    element.addEventListener('click', () => setDanger())
-    setDanger()
+    buttonEl.addEventListener('click', () => setTheme())
+    setTheme()
 }
 
 buttonHandler()
