@@ -14,7 +14,7 @@ app.className = box({type: 'center', border: 'some'})
 app.appendChild(title)
 app.appendChild(buttonEl)
 
-body.appendChild(app)
+body.insertBefore(app, body.firstChild)
 
 const buttonHandler = () => {
     let theme = false

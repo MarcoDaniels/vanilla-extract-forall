@@ -9,6 +9,11 @@ let
     ${pkgs.yarn}/bin/yarn start
   '';
 
+  ciBuild = pkgs.writeScriptBin "ciBuild" ''
+    ${pkgs.yarn}/bin/yarn
+    ${pkgs.yarn}/bin/yarn build
+  '';
+
 in pkgs.mkShell {
   buildInputs = [
     pkgs.nixfmt
@@ -20,5 +25,6 @@ in pkgs.mkShell {
     pkgs.elmPackages.elm-format
 
     start
+    ciBuild
   ];
 }
