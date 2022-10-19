@@ -6,5 +6,6 @@ import { plugin } from 'vite-plugin-elm'
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin'
 
 export default defineConfig({
-    plugins: [vanillaExtractPlugin(), react(), svelte(), vue(), plugin()]
+    plugins: [vanillaExtractPlugin(), react(), svelte(), vue(), plugin()],
+    base: '',
 })

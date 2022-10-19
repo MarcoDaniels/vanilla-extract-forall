@@ -11,6 +11,7 @@ let
 
   ciBuild = pkgs.writeScriptBin "ciBuild" ''
     ${pkgs.yarn}/bin/yarn
+    cd _vanilla-extract && ${pkgs.yarn}/bin/yarn link && cd .. && yarn link vanilla
     ${pkgs.yarn}/bin/yarn build
   '';
 
